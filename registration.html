@@ -77,6 +77,7 @@
     <nav class="nav-links" id="reg-nav-links" aria-label="Registration navigation">
       <a href="#programs"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Programs</a>
       <a href="#register"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Register</a>
+      <a href="Home.html" class="nav-drawer-home"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to home</a>
     </nav>
     <a href="Home.html" class="nav-cta nav-home"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to home</a>
     <button class="reg-hamburger" id="reg-hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="reg-nav-links">
@@ -86,11 +87,13 @@
 </header>
 <div class="nav-overlay" id="reg-nav-overlay"></div>
 
-<section class="hero">
+<main id="main-content">
+
+<section class="hero" aria-labelledby="reg-hero-heading">
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow">Bethel Learning Institute</div>
-      <h1>Claim your seat in the <em>next cohort.</em></h1>
+      <h1 id="reg-hero-heading">Claim your seat in the <em>next cohort.</em></h1>
       <p class="lead">Hands-on coding and mathematics training for kids, students, and professionals — taught by instructors who care how you learn, not just what you learn.</p>
       <div class="hero-actions">
         <a href="#register" class="btn-primary">Reserve my seat</a>
@@ -119,11 +122,11 @@
   </div>
 </section>
 
-<section class="section" id="programs">
+<section class="section" id="programs" aria-labelledby="reg-programs-heading">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Programs</div>
-      <h2>Choose your track</h2>
+      <h2 id="reg-programs-heading">Choose your track</h2>
       <p>Every track is project-based — students leave with things they built, not just notes they took.</p>
     </div>
     <div class="programs-grid">
@@ -281,8 +284,22 @@
       </div>
     </div>
   </div>
-</section>
+</section><!-- /#register -->
 
+</main><!-- /#main-content -->
+
+  <!-- ── Floating action buttons ──────────────────── -->
+  <div class="fab-group" aria-label="Quick actions">
+    <a href="Home.html" class="fab-home" aria-label="Back to home page">
+      <i class="fa-solid fa-house" aria-hidden="true"></i>
+    </a>
+    <a href="https://wa.me/2348166330072" class="fab-wa" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+    <button class="fab-top" id="fab-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+    </button>
+  </div>
 
 <script src="registration.js"></script>
 <script src="registration-animations.js"></script>

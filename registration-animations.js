@@ -286,6 +286,20 @@
     window.addEventListener('resize', function () { if (window.innerWidth > 860) closeMenu(); }, { passive: true });
   }
 
+  /* ── 10. Back-to-top visibility + year ─────────────────────────────── */
+  function initUtilities() {
+    // Back-to-top
+    const topBtn = document.getElementById('fab-top');
+    if (topBtn) {
+      window.addEventListener('scroll', function () {
+        topBtn.classList.toggle('visible', window.scrollY > 400);
+      }, { passive: true });
+    }
+    // Copyright year (registration page footer has none, but guard anyway)
+    const yr = document.getElementById('year');
+    if (yr) yr.textContent = new Date().getFullYear();
+  }
+
   /* ── Boot ───────────────────────────────────────────────────────────── */
   function init() {
     injectOrbs();
@@ -298,6 +312,7 @@
     initNavScroll();
     initLabelFloat();
     initRegHamburger();
+    initUtilities();
   }
 
   if (document.readyState === 'loading') {

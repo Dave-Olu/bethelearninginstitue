@@ -628,15 +628,15 @@
     }
     .nav-links a:last-child { border-bottom: none; }
 
-    /* Add "Back to home" inside the mobile drawer */
-    .nav-links::after {
-      content: "← Back to home";
-      display: block;
-      margin-top: 24px;
-      font-size: 13px;
-      color: var(--gold-200);
-      font-weight: 600;
+    /* Add "Back to home" inside the mobile drawer — real link used instead */
+    .nav-drawer-home {
+      font-size: 13px !important;
+      color: var(--gold-200) !important;
+      font-weight: 600 !important;
+      margin-top: 12px;
+      opacity: 0.85;
     }
+    .nav-drawer-home:hover { opacity: 1; }
 
     /* Hero */
     .hero-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -682,4 +682,88 @@
     .brand-name { font-size: 13px; }
     .brand-sub { display: none; }
     .badge { width: 36px; height: 36px; }
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     FLOATING BUTTONS — registration page
+  ═══════════════════════════════════════════════════════ */
+  .fab-group {
+    position: fixed;
+    bottom: 28px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    z-index: 500;
+  }
+
+  /* Home FAB (unique to registration page) */
+  .fab-home {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--purple-800);
+    color: var(--gold-400);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(28,15,51,0.4);
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .fab-home:hover {
+    transform: scale(1.1);
+    background: var(--purple-700);
+  }
+
+  /* WhatsApp FAB */
+  .fab-wa {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 18px rgba(37,211,102,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: pulse-ring-wa-reg 2.6s ease-out infinite;
+  }
+  .fab-wa:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(37,211,102,0.6);
+    animation: none;
+  }
+  @keyframes pulse-ring-wa-reg {
+    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); }
+    70%  { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+
+  /* Back-to-top FAB */
+  .fab-top {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--purple-950);
+    color: var(--gold-400);
+    border: 1.5px solid rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(28,15,51,0.3);
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+  }
+  .fab-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .fab-top:hover { background: var(--purple-800); }
+
+  @media (max-width: 520px) {
+    .fab-group { bottom: 20px; right: 16px; }
+    .fab-wa  { width: 46px; height: 46px; font-size: 20px; }
+    .fab-home, .fab-top { width: 38px; height: 38px; font-size: 14px; }
   }

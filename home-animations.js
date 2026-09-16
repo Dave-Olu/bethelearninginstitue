@@ -256,7 +256,8 @@
     });
   }
 
-  /* ── 9. Active nav link highlight on scroll ─────────────────────────── */  function initActiveNav() {
+  /* ── 9. Active nav link highlight on scroll ─────────────────────────── */
+  function initActiveNav() {
     const sections = document.querySelectorAll('section[id]');
     const links    = document.querySelectorAll('.nav-links a');
     if (!sections.length || !links.length) return;
@@ -277,7 +278,7 @@
     }, { passive: true });
   }
 
-  /* ── Boot ───────────────────────────────────────────────────────────── */
+  /* ── 10. Hamburger menu ─────────────────────────────────────────────── */
   function initHamburger() {
     const btn     = document.getElementById('hamburger');
     const nav     = document.getElementById('nav-links');
@@ -315,6 +316,25 @@
     window.addEventListener('resize', function () { if (window.innerWidth > 880) closeMenu(); }, { passive: true });
   }
 
+  /* ── 11. Copyright year injection ───────────────────────────────────── */
+  function initYear() {
+    const el = document.getElementById('year');
+    if (el) el.textContent = new Date().getFullYear();
+  }
+
+  /* ── 12. Back-to-top button visibility ──────────────────────────────── */
+  function initBackToTop() {
+    const btn = document.getElementById('fab-top');
+    if (!btn) return;
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 400) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }, { passive: true });
+  }
+
   /* ── Boot ───────────────────────────────────────────────────────────── */
   function init() {
     injectOrbs();
@@ -327,6 +347,8 @@
     initCardTilt();
     initActiveNav();
     initHamburger();
+    initYear();
+    initBackToTop();
   }
 
   if (document.readyState === 'loading') {
