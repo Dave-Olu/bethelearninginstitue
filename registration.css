@@ -33,6 +33,7 @@
   img,svg{display:block;}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
 
+<<<<<<< HEAD
   /* ---------- Header — sticky ---------- */
   header{
     position: sticky;
@@ -41,21 +42,35 @@
     background:var(--purple-950);
     color:var(--white);
     border-bottom: 1px solid rgba(255,255,255,0.08);
+=======
+  /* ---------- Header ---------- */
+  header{
+    background:var(--purple-950);
+    color:var(--white);
+>>>>>>> 65b605b9502f56a50531ff866e8884a015cff7e7
   }
   .nav{
     display:flex;align-items:center;justify-content:space-between;
     padding:20px 0;
   }
+<<<<<<< HEAD
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+=======
+  .brand{display:flex;align-items:center;gap:12px;}
+>>>>>>> 65b605b9502f56a50531ff866e8884a015cff7e7
   .badge{
     width:42px;height:42px;border-radius:50%;
     background:linear-gradient(155deg,var(--gold-400),var(--gold-500));
     display:flex;align-items:center;justify-content:center;
     font-family:'Fraunces',serif;font-weight:700;font-size:15px;color:var(--purple-950);
     flex-shrink:0;
+<<<<<<< HEAD
     overflow:hidden;
   }
   .badge img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+=======
+  }
+>>>>>>> 65b605b9502f56a50531ff866e8884a015cff7e7
   .brand-name{font-size:15px;font-weight:700;letter-spacing:0.02em;line-height:1.2;}
   .brand-sub{font-size:11px;color:var(--gold-200);letter-spacing:0.14em;text-transform:uppercase;}
   .nav-links{display:flex;gap:28px;font-size:14px;font-weight:600;}
@@ -66,6 +81,7 @@
     padding:9px 18px;border-radius:999px;font-weight:700;font-size:13px;
     text-decoration:none;
   }
+<<<<<<< HEAD
   .nav-home{
     background:transparent;color:var(--gold-200);
     border:1.5px solid rgba(255,255,255,0.22);
@@ -73,6 +89,8 @@
     text-decoration:none;transition:border-color .2s,color .2s;
   }
   .nav-home:hover{border-color:var(--gold-400);color:var(--gold-400);}
+=======
+>>>>>>> 65b605b9502f56a50531ff866e8884a015cff7e7
 
   /* ---------- Hero ---------- */
   .hero{
@@ -314,6 +332,7 @@
     .perf-line::after{right:-30px;}
     .pass-stub, form, .confirm{padding-left:20px;padding-right:20px;}
     .nav-links{display:none;}
+<<<<<<< HEAD
   }
 
 
@@ -767,3 +786,6 @@
     .fab-wa  { width: 46px; height: 46px; font-size: 20px; }
     .fab-home, .fab-top { width: 38px; height: 38px; font-size: 14px; }
   }
+=======
+  }
+>>>>>>> 65b605b9502f56a50531ff866e8884a015cff7e7
